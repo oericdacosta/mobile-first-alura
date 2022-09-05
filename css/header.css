@@ -15,6 +15,14 @@
     display: inline-block;
 }
 
+.container__botao:checked ~ .container__rotulo > .cabecalho__menu-hamburger{
+    background-image: url(../img/Menu\ Aberto.png);
+}
+
+.container__botao:checked ~ .container__rotulo{
+    background: var(--azul-degrade);
+}
+
 .container{
     display: flex;
     align-items: center;
@@ -65,6 +73,10 @@
     display: none;
 }
 
+.container__texto{
+    display: none;
+}
+
 
 
 
@@ -88,7 +100,7 @@
     }
 
     .opcoes__item{
-        padding: 0 1em;
+        padding: 2em 1em;
         text-transform: uppercase;
     }
 
@@ -112,5 +124,42 @@
 
     .opcoes__botao{
         display: none;
+    }
+
+    .opcoes__botao:checked ~ .opcoes__rotulo > .opcoes__item{
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .lista-menu__item:hover{
+        background: var(--azul-degrade);
+    }
+
+    .lista-menu__item:hover > .lista-menu__link{
+        -webkit-text-fill-color: var(--branco);
+        text-decoration: none;
+    }
+}
+
+
+
+@media screen and (min-width: 1728px){
+    .container__texto{
+        display: block;
+    }
+
+    .container__link{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: var(--preto);
+    }
+
+    .cabecalho{
+        padding: 0 2em;
+    }
+
+    .opcoes{
+        margin-right: auto;
     }
 }
